@@ -1,27 +1,49 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import "./title.scss";
 import { allinfo, pictures } from "./text.js";
 export default function Title() {
-	const [initialAnimationCompleted, setInitialAnimationCompleted] = useState(false);
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const names = ["Birthday Parties", "Wedding Planning", "Corporate Evenets"];
 	const pics = ["1", "2", "3"];
-	const style = {
+	let style = {
 		// top: ["5%", "15%", "35%"],
 		// left: ["20%", "50%", "15%"],
-		top: ["5%", "15%", "35%"],
-		left: ["16%", "40%", "8%"],
+		// top: ["4%", "16%", "32%"],
+		// left: ["16%", "40%", "8%"],
 	};
 	// const handleInitialAnimationComplete = () => {
 	// 	setInitialAnimationCompleted(true);
 	// };
+	useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+	if (windowWidth < 1100) {
+        style = {
+            top: ["4%", "16%", "32%"],
+            left: ["16%", "40%", "8%"],
+        };
+    } else {
+        style = {
+            top: ["5%", "15%", "35%"],
+            left: ["20%", "50%", "15%"],
+        };
+    }
 
 	return (
 		<>
 			<div id="main-container">
 				<motion.div
 					id="title"
-					initial={initialAnimationCompleted ? {} : { y: 30, opacity: 0 }}
+					initial={{ y: 30, opacity: 0 }}
 					transition={{ type: "tween", ease: "easeInOut", delay: 0.3 }}
 					animate={{ y: 0, opacity: 1 }}
 					// onAnimationComplete={handleInitialAnimationComplete}
@@ -32,7 +54,7 @@ export default function Title() {
 					<div id="left-container">
 						<motion.div
 							id="title"
-							initial={initialAnimationCompleted ? {} : { y: 30, opacity: 0 }}
+							initial={ { y: 30, opacity: 0 }}
 							transition={{ type: "tween", ease: "easeInOut", delay: 0.5 }}
 							animate={{ y: 0, opacity: 1 }}
 						>
@@ -40,7 +62,7 @@ export default function Title() {
 						</motion.div>
 						<motion.div
 							id="content"
-							initial={initialAnimationCompleted ? {} : { y: 30, opacity: 0 }}
+							initial={{ y: 30, opacity: 0 }}
 							transition={{ type: "tween", ease: "easeInOut", delay: 0.7 }}
 							animate={{ y: 0, opacity: 1 }}
 						>
@@ -50,7 +72,7 @@ export default function Title() {
 						</motion.div>
 						<div id="sub-content">
 							<motion.div
-								initial={initialAnimationCompleted ? {} : { y: 30, opacity: 0 }}
+								initial={ { y: 30, opacity: 0 }}
 								transition={{ type: "tween", ease: "easeInOut", delay: 0.8 }}
 								animate={{ y: 0, opacity: 1 }}
 							>
@@ -62,7 +84,7 @@ export default function Title() {
 										<div key={index}>
 											<motion.div
 												id="list-items"
-												initial={initialAnimationCompleted ? {} : { y: 30, opacity: 0 }}
+												initial={ { y: 30, opacity: 0 }}
 												transition={{ type: "tween", ease: "easeInOut", delay: 0.9 + index * 0.1 }}
 												animate={{ y: 0, opacity: 1 }}
 											>

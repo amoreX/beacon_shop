@@ -124,7 +124,7 @@ body {
         height: fit-content;
         margin-top: 0px;
         // background-color: grey;
-        padding: 20px;
+        padding: 10px;
         #title {
           font-size: 4vw;
         }
@@ -136,12 +136,12 @@ body {
         }
       }
       #right-container {
-        background-color: grey;
+        // background-color: grey;
 		// height: 50vh;
         width: 100vw;
         #pic-container {
           width: 200px;
-          height: 240px;
+          height: 220px;
           background-color: rgb(255, 6, 6);
           border-radius: 8%;
           position: absolute;
