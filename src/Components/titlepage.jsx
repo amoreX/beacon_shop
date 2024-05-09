@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import "./title.scss";
-import { allinfo } from "./text.js";
+import { allinfo,pictures } from "./text.js";
 export default function Title() {
 	const names = ["Birthday Parties", "Wedding Planning", "Corporate Evenets"];
+	const pics = ["1", "2", "3"];
+	const style = {
+		top: ["5%", "15%", "35%"],
+		left: ["20%", "50%", "15%"],
+	};
 	return (
 		<>
 			<div id="main-container">
@@ -36,7 +41,19 @@ export default function Title() {
 							</div>
 						</div>
 					</div>
-					<div id="right-container"></div>
+					<div id="right-container">
+						{pics.map((content, index) => {
+							return (
+								<div
+									key={index}
+									id="pic-container"
+									style={{ top: style["top"][index], left: style["left"][index] }}
+								>
+									<img src={pictures[index]} alt="image" />
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</>
