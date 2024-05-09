@@ -7,8 +7,10 @@ export default function Title() {
 	const names = ["Birthday Parties", "Wedding Planning", "Corporate Evenets"];
 	const pics = ["1", "2", "3"];
 	const style = {
+		// top: ["5%", "15%", "35%"],
+		// left: ["20%", "50%", "15%"],
 		top: ["5%", "15%", "35%"],
-		left: ["20%", "50%", "15%"],
+		left: ["16%", "40%", "8%"],
 	};
 	// const handleInitialAnimationComplete = () => {
 	// 	setInitialAnimationCompleted(true);
