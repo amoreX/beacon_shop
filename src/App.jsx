@@ -1,7 +1,9 @@
+import Title from "./Components/titlepage.jsx";
+
 function App() {
 	return (
 		<>
-			<div>no</div>
+			<Title />
 		</>
 	);
 }
