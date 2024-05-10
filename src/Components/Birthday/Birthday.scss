@@ -2,31 +2,36 @@
 $title-colour: #ff8fa3;
 $sub-colour: #a66772;
 
-
-#birthday-container{
-    width:100vw;
-    height: 100vh;
-    color:$sub-colour;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 20px;
-    font-family: "Wix Madefor Display", sans-serif;
-    // background-color: grey;
-    #title{
-        font-size: 4rem;
-        font-weight: 600;
-        z-index: 3;
-    }
-    #pictures{
-        z-index: 2;
-        position:absolute;
-        width:100%;
-        height: 100%;
-        background-color: rgb(129, 129, 129);
-
-    }
-
+#birthday-container {
+	width: 100vw;
+	height: 100vh;
+	color: $sub-colour;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 20px;
+	font-family: "Wix Madefor Display", sans-serif;
+	// background-color: grey;
+	#title {
+		font-size: 4rem;
+		font-weight: 600;
+		z-index: 3;
+	}
+	#pictures {
+		z-index: 2;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		padding: 48px;
+		// background-color: rgb(129, 129, 129);
+		#pic {
+			position: absolute;
+			background-color: $sub-colour;
+			border-radius: 24px;
+			transition: 0.28s ease-in-out;
+		}
+	}
 }

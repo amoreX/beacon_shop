@@ -1,11 +1,96 @@
-import {motion} from "framer-motion"
-import "./Birthday.scss"
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import "./Birthday.scss";
 
-export default function Birthday(){
-    return(
-        <div id="birthday-container">
-            <div id="title">Birthdays</div>
-            <div id="pictures"></div>
-        </div>
-    )
+export default function Birthday() {
+	const [mark, setMark] = useState(0);
+	const [pics, setPics] = useState([
+		{ top: "4%", left: "4%", width: "24%", height: "60%" }, // pic1
+		{ top: "4%", left: "32%", width: "24%", height: "32%" }, // pic2
+		{ top: "4%", left: "60%", width: "36%", height: "32%" }, // pic3
+		{ top: "68%", left: "4%", width: "36%", height: "28%" }, // pic4
+		{ top: "68%", left: "44%", width: "24%", height: "28%" }, // pic5
+		{ top: "40%", left: "72%", width: "24%", height: "56%" }, // pic6
+	]);
+	const [pics1, setPics1] = useState([
+		{ top: "4%", left: "4%", width: "24%", height: "60%" }, // pic1
+		{ top: "4%", left: "32%", width: "24%", height: "32%" }, // pic2
+		{ top: "4%", left: "60%", width: "36%", height: "32%" }, // pic3
+		{ top: "68%", left: "4%", width: "36%", height: "28%" }, // pic4
+		{ top: "68%", left: "44%", width: "24%", height: "28%" }, // pic5
+		{ top: "40%", left: "72%", width: "24%", height: "56%" }, // pic6
+	]);
+	const [pics2, setPics2] = useState([
+		{ top: "68%", left: "4%", width: "36%", height: "28%" }, // pic1
+		{ top: "4%", left: "4%", width: "24%", height: "60%" }, // pic2
+		{ top: "4%", left: "32%", width: "24%", height: "32%" }, // pic3
+		{ top: "68%", left: "44%", width: "24%", height: "28%" }, // pic4
+		{ top: "40%", left: "72%", width: "24%", height: "56%" }, // pic5
+		{ top: "4%", left: "60%", width: "36%", height: "32%" }, // pic6
+	]);
+	const [pics3, setPics3] = useState([
+		{ top: "68%", left: "44%", width: "24%", height: "28%" }, // pic1
+		{ top: "68%", left: "4%", width: "36%", height: "28%" }, // pic2
+		{ top: "4%", left: "4%", width: "24%", height: "60%" }, // pic3
+		{ top: "40%", left: "72%", width: "24%", height: "56%" }, // pic4
+		{ top: "4%", left: "60%", width: "36%", height: "32%" }, // pic5
+		{ top: "4%", left: "32%", width: "24%", height: "32%" }, // pic6
+	]);
+	const [pics4, setPics4] = useState([
+		{ top: "40%", left: "72%", width: "24%", height: "56%" }, // pic1
+		{ top: "68%", left: "44%", width: "24%", height: "28%" }, // pic2
+		{ top: "68%", left: "4%", width: "36%", height: "28%" }, // pic3
+		{ top: "4%", left: "60%", width: "36%", height: "32%" }, // pic4
+		{ top: "4%", left: "32%", width: "24%", height: "32%" }, // pic5
+		{ top: "4%", left: "4%", width: "24%", height: "60%" }, // pic6
+	]);
+	const [pics5, setPics5] = useState([
+		{ top: "4%", left: "60%", width: "36%", height: "32%" }, // pic1
+		{ top: "40%", left: "72%", width: "24%", height: "56%" }, // pic2
+		{ top: "68%", left: "44%", width: "24%", height: "28%" }, // pic3
+		{ top: "4%", left: "32%", width: "24%", height: "32%" }, // pic4
+		{ top: "4%", left: "4%", width: "24%", height: "60%" }, // pic5
+		{ top: "68%", left: "4%", width: "36%", height: "28%" }, // pic6
+	]);
+	const [pics6, setPics6] = useState([
+		{ top: "4%", left: "32%", width: "24%", height: "32%" }, // pic1
+		{ top: "4%", left: "60%", width: "36%", height: "32%" }, // pic2
+		{ top: "40%", left: "72%", width: "24%", height: "56%" }, // pic3
+		{ top: "4%", left: "4%", width: "24%", height: "60%" }, // pic4
+		{ top: "68%", left: "4%", width: "36%", height: "28%" }, // pic5
+		{ top: "68%", left: "44%", width: "24%", height: "28%" }, // pic6
+	]);
+	const listofpics = [pics1, pics2, pics3, pics4, pics5, pics6];
+
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			setMark((prev) => (prev + 1) % 6);
+		}, 2500); // Adjust the interval duration as per your preference
+
+		return () => clearInterval(intervalId);
+	}, []);
+	useEffect(() => {
+		setPics(listofpics[mark]);
+	}, [mark]); // Adjust the interval duration as per your preference
+
+	return (
+		<div id="birthday-container">
+			<div id="title">Birthdays</div>
+			<div id="pictures">
+				{pics.map((pic, index) => {
+					return (
+						<div
+							id="pic"
+							style={{
+								top: pics[index]["top"],
+								left: pics[index]["left"],
+								height: pics[index]["height"],
+								width: pics[index]["width"],
+							}}
+						></div>
+					);
+				})}
+			</div>
+		</div>
+	);
 }
