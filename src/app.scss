@@ -1,4 +1,7 @@
-#body-container{
-    display: flex;
-    flex-direction: column;
+#body-container {
+	display: flex;
+	flex-direction: column;
+}
+::-webkit-scrollbar {
+	display: none; /* Hide scrollbar */
 }

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import "./Birthday.scss";
+import "./Wedding.scss";
 
 export default function Birthday() {
 	const [mark, setMark] = useState(0);
@@ -120,7 +120,7 @@ export default function Birthday() {
 
 	return (
 		<div id="birthday-container">
-			<div id="title-birthday">Birthday Parties</div>
+			<div id="title-wedding">Wedding</div>
 			<div id="pictures">
 				{pics.map((pic, index) => {
 					return (
