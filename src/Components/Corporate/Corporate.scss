@@ -14,7 +14,7 @@ $sub-colour: #a66772;
 	padding: 20px;
 	font-family: "Wix Madefor Display", sans-serif;
 	// background-color: grey;
-	#title-birthday {
+	#title-corporate {
 		font-size: 4rem;
 		font-weight: 600;
 		z-index: 3;
@@ -37,7 +37,7 @@ $sub-colour: #a66772;
 }
 @media screen and (max-width: 1000px) {
 	#birthday-container {
-		#title-birthday {
+		#title-corporate {
 			font-size: 2rem;
 		}
 	}
