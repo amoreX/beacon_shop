@@ -129,6 +129,12 @@ $sub-colour: #a66772;
 				width: 64%;
 				background-color: $title-colour;
 				margin-inline: auto;
+				cursor: pointer;
+				transition: 0.38s ease-in-out;
+				&:hover {
+					background-color: $sub-colour;
+					border-radius: 0px;
+				}
 			}
 		}
 	}

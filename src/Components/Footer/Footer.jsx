@@ -1,6 +1,34 @@
+import { useReducedMotion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import "./Footer.scss";
-
+import { useRef } from "react";
 export default function Footer() {
+	const serviceId = "service_vjrv5xh";
+	const templateId = "template_wl12v6v";
+	const publicKey = "2tYHnFk_p_sQG1fiK";
+
+	const mail = useRef();
+	const cont = useRef();
+	const send = () => {
+		// console.log(mail.current.value);
+		// console.log(cont.current.value);
+		const templateParams = {
+			name: mail.current.value,
+			message: cont.current.value,
+		};
+
+		emailjs
+			.send(serviceId, templateId, templateParams, publicKey)
+			.then((response) => {
+				console.log("Email sent successfully");
+				mail.current.value = "";
+				cont.current.value = "";
+			})
+			.catch((error) => {
+				console.log("Email failed to send");
+				console.log(error);
+			});
+	};
 	return (
 		<div id="footer-container">
 			<div id="footer-title">
@@ -41,12 +69,17 @@ export default function Footer() {
 					<div id="right-content-sub">Have questions or ready to start planning your event? </div>
 					<div id="right-content-sub">Fill out the form below. </div>
 					<div id="email-box">
-						<textarea placeholder="Email Address"></textarea>
+						<textarea ref={mail} placeholder="Email Address"></textarea>
 					</div>
 					<div id="content-email">
-						<textarea placeholder="Please use this space to provide details about your event such as date, location, estimated guests, theme preferences, or any specific requests you may have. "></textarea>
+						<textarea
+							ref={cont}
+							placeholder="Please use this space to provide details about your event such as date, location, estimated guests, theme preferences, or any specific requests you may have. "
+						></textarea>
 					</div>
-					<div id="send-btn">Send</div>
+					<div id="send-btn" onClick={() => send()}>
+						Send
+					</div>
 				</div>
 			</div>
 		</div>
