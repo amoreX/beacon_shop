@@ -8,6 +8,7 @@ import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { useEffect, useState } from "react";
 function App() {
 	const [visible, setVisible] = useState(false);
+	const [final, setFinal] = useState(true);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -16,6 +17,7 @@ function App() {
 			}
 			if (window.scrollY > window.innerHeight * 3) {
 				setVisible(false);
+				setFinal(false);
 			}
 		};
 
@@ -30,7 +32,7 @@ function App() {
 		<>
 			<ReactLenis root>
 				<div id="body-container">
-					{visible && <img src="./hbd.gif" id="confetti" />}
+					{visible && final && <img src="./hbd.gif" id="confetti" />}
 					<Title />
 					<Wedding />
 					<Birthday />
