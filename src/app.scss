@@ -1,6 +1,14 @@
 #body-container {
 	display: flex;
 	flex-direction: column;
+	#confetti {
+		width: 100vw;
+		height: auto;
+		// object-fit: cover;
+		mix-blend-mode: screen;
+		z-index: 77;
+		position: absolute;
+	}
 }
 ::-webkit-scrollbar {
 	display: none; /* Hide scrollbar */
