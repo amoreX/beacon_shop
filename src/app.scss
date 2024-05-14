@@ -10,6 +10,7 @@
 		position: fixed;
 		animation: wow 3s forwards;
 		animation-delay: 2s;
+		pointer-events: none;
 	}
 	@keyframes wow {
 		0% {

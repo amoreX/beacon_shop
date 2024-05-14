@@ -14,6 +14,9 @@ function App() {
 			if (window.scrollY > window.innerHeight * 2) {
 				setVisible(true);
 			}
+			if (window.scrollY > window.innerHeight * 3) {
+				setVisible(false);
+			}
 		};
 
 		window.addEventListener("scroll", handleScroll);
