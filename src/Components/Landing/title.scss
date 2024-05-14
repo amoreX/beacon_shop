@@ -3,162 +3,163 @@ $title-colour: #ff8fa3;
 $sub-colour: #a66772;
 
 body {
-  margin: 0px;
-  overflow-x: hidden;
-  font-family: "Wix Madefor Display", sans-serif;
+	margin: 0px;
+	overflow-x: hidden;
+	font-family: "Wix Madefor Display", sans-serif;
 }
 
 #main-container {
-  width: 100%;
-  height: 100vh;
-  // background-color: red;
+	width: 100%;
+	height: 100vh;
+	background-color: white;
+	z-index: 4;
 
-  #title {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    color: $title-colour;
-    font-weight: 600;
-    font-size: max(48px, 3rem);
-    // padding: 20px;
-    margin-top: 50px;
-    box-sizing: border-box;
-  }
-  #body {
-    width: 100vw;
-    height: 100%;
-    // background-color: grey;
-    display: flex;
-    position: relative;
-    cursor: default;
-    user-select: none;
-    #left-container {
-      // background-color: red;
-      width: 50%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 4%;
-      // justify-content: center;
-      padding: 50px;
-      box-sizing: border-box;
+	#title {
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		color: $title-colour;
+		font-weight: 600;
+		font-size: max(48px, 3rem);
+		// padding: 20px;
+		margin-top: 50px;
+		box-sizing: border-box;
+	}
+	#body {
+		width: 100vw;
+		height: 100%;
+		// background-color: grey;
+		display: flex;
+		position: relative;
+		cursor: default;
+		user-select: none;
+		#left-container {
+			// background-color: red;
+			width: 50%;
+			height: 100%;
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 4%;
+			// justify-content: center;
+			padding: 50px;
+			box-sizing: border-box;
 
-      #title {
-        width: 100%;
-        color: $sub-colour;
-        font-size: 2vw;
-      }
-      #content {
-        margin-top: 20px;
-        font-size: 1.2vw;
-      }
-      #sub-content {
-        margin-top: 2vh;
-        font-size: 1.2vw;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+			#title {
+				width: 100%;
+				color: $sub-colour;
+				font-size: 2vw;
+			}
+			#content {
+				margin-top: 20px;
+				font-size: 1.2vw;
+			}
+			#sub-content {
+				margin-top: 2vh;
+				font-size: 1.2vw;
+				display: flex;
+				flex-direction: column;
+				width: 100%;
 
-        #list {
-          display: flex;
-          flex-direction: column;
-          #list-items {
-            display: flex;
-            flex-direction: row;
-            #index {
-              color: $sub-colour;
-              font-weight: 600;
-            }
-            #list-content {
-              margin-left: 10px;
-            }
-          }
-        }
-      }
-    }
-    #right-container {
-      // background-color: blue;
-      width: 50%;
-      height: 100%;
-      position: relative;
-      #pic-container {
-        width: 42%;
-        height: 48%;
-        background-color: grey;
-        border-radius: 8%;
-        position: absolute;
-        // border: 1px solid black;
-        // opacity: 0;
-        overflow: hidden;
-        transition: 0.29s ease-in-out;
-        cursor: pointer;
+				#list {
+					display: flex;
+					flex-direction: column;
+					#list-items {
+						display: flex;
+						flex-direction: row;
+						#index {
+							color: $sub-colour;
+							font-weight: 600;
+						}
+						#list-content {
+							margin-left: 10px;
+						}
+					}
+				}
+			}
+		}
+		#right-container {
+			// background-color: blue;
+			width: 50%;
+			height: 100%;
+			position: relative;
+			#pic-container {
+				width: 42%;
+				height: 48%;
+				background-color: grey;
+				border-radius: 8%;
+				position: absolute;
+				// border: 1px solid black;
+				// opacity: 0;
+				overflow: hidden;
+				transition: 0.29s ease-in-out;
+				cursor: pointer;
 
-        img {
-          width: 100%;
-          height: 100%;
-        }
-        z-index: 1;
-        &:hover {
-          scale: 1.1;
-          z-index: 2;
-        }
-      }
-    }
-  }
+				img {
+					width: 100%;
+					height: 100%;
+				}
+				z-index: 1;
+				&:hover {
+					scale: 1.1;
+					z-index: 2;
+				}
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 1000px) {
-  #main-container {
-    #title {
-      margin-top: 20px;
-    }
-    #body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      #left-container {
-        width: 100vw;
-        height: fit-content;
-        margin-top: 0px;
-        // background-color: grey;
-        padding: 10px;
-        #title {
-          font-size: 4vw;
-        }
-        #content {
-          font-size: 2.5vw;
-        }
-        #sub-content {
-          font-size: 2.5vw;
-        }
-      }
-      #right-container {
-        // background-color: grey;
-		// height: 50vh;
-        width: 100vw;
-        #pic-container {
-          width: 200px;
-          height: 220px;
-          background-color: rgb(255, 6, 6);
-          border-radius: 8%;
-          position: absolute;
-          overflow: hidden;
-          transition: 0.29s ease-in-out;
-          cursor: pointer;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-          z-index: 1;
-          &:hover {
-            scale: 1.1;
-            z-index: 2;
-          }
-        }
-      }
-    }
-  }
+	#main-container {
+		#title {
+			margin-top: 20px;
+		}
+		#body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			#left-container {
+				width: 100vw;
+				height: fit-content;
+				margin-top: 0px;
+				// background-color: grey;
+				padding: 10px;
+				#title {
+					font-size: 4vw;
+				}
+				#content {
+					font-size: 2.5vw;
+				}
+				#sub-content {
+					font-size: 2.5vw;
+				}
+			}
+			#right-container {
+				// background-color: grey;
+				// height: 50vh;
+				width: 100vw;
+				#pic-container {
+					width: 200px;
+					height: 220px;
+					background-color: rgb(255, 6, 6);
+					border-radius: 8%;
+					position: absolute;
+					overflow: hidden;
+					transition: 0.29s ease-in-out;
+					cursor: pointer;
+					img {
+						width: 100%;
+						height: 100%;
+					}
+					z-index: 1;
+					&:hover {
+						scale: 1.1;
+						z-index: 2;
+					}
+				}
+			}
+		}
+	}
 }

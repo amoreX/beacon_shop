@@ -5,8 +5,10 @@ $sub-colour: #a66772;
 #birthday-container {
 	width: 100vw;
 	height: 100vh;
+	background-color: white;
 	color: $sub-colour;
 	position: relative;
+	z-index: 4;
 	display: flex;
 	justify-content: center;
 	align-items: center;

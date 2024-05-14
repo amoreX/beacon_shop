@@ -5,9 +5,30 @@
 		width: 100vw;
 		height: auto;
 		// object-fit: cover;
-		mix-blend-mode: screen;
+		mix-blend-mode: exclusion;
 		z-index: 77;
-		position: absolute;
+		position: fixed;
+		animation: wow 3s forwards;
+		animation-delay: 2s;
+	}
+	@keyframes wow {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}
+@media screen and (max-width: 1000px) {
+	#body-container {
+		#confetti {
+			// transform: translateX(-25%, ;
+			transform: scale(2.1);
+			bottom: 60%;
+			// height: 50vh;
+			// width: auto;
+		}
 	}
 }
 ::-webkit-scrollbar {

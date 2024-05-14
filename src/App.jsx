@@ -7,14 +7,15 @@ import "./app.scss";
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { useEffect, useState } from "react";
 function App() {
+	const [visible, setVisible] = useState(false);
+	const update = () => {
+		setVisible(true);
+	};
 	return (
 		<>
 			<ReactLenis root>
 				<div id="body-container">
-					{/* <video id="confetti" autoPlay>
-						<source src="./assets/hbd.mp4" type="video/mp4" />
-						Your browser does not support the video tag.
-					</video> */}
+					<img src="./hbd.gif" id="confetti" />
 					<Title />
 					<Wedding />
 					<Birthday />

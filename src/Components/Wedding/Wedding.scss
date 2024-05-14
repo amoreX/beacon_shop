@@ -9,6 +9,7 @@ $sub-colour: #a66772;
 	position: relative;
 	display: flex;
 	justify-content: center;
+	background-color: white;
 	align-items: center;
 	box-sizing: border-box;
 	padding: 20px;
@@ -35,10 +36,10 @@ $sub-colour: #a66772;
 		}
 	}
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) {
 	#birthday-container {
-        #title-wedding {
-            font-size: 2rem;
-        }
-    }
+		#title-wedding {
+			font-size: 2rem;
+		}
+	}
 }
