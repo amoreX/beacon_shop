@@ -24,9 +24,10 @@
 	#body-container {
 		#confetti {
 			// transform: translateX(-25%, ;
-			transform: scale(2.1);
-			bottom: 60%;
-			// height: 50vh;
+			// transform: scale(2.1);
+			// bottom: 20%;
+			height: 100vh;
+			object-fit: cover;
 			// width: auto;
 		}
 	}
