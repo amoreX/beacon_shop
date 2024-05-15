@@ -119,7 +119,7 @@ export default function Birthday() {
 	}, [mark]); // Adjust the interval duration as per your preference
 
 	return (
-		<div id="birthday-container">
+		<div id="wedding-container">
 			<div id="title-wedding">Wedding</div>
 			<div id="pictures">
 				{pics.map((pic, index) => {

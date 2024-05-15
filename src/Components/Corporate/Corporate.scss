@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap");
-$title-colour: #ff8fa3;
+$title-colour: #38608e;
 $sub-colour: #a66772;
 
-#birthday-container {
+#corporate-container {
 	width: 100vw;
 	height: 100vh;
-	color: $sub-colour;
+	color: $title-colour;
 	position: relative;
 	background-color: white;
 	display: flex;
@@ -37,7 +37,7 @@ $sub-colour: #a66772;
 	}
 }
 @media screen and (max-width: 1000px) {
-	#birthday-container {
+	#corporate-container {
 		#title-corporate {
 			font-size: 2rem;
 		}
