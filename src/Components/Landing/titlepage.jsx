@@ -48,7 +48,7 @@ export default function Title() {
 					animate={{ y: 0, opacity: 1 }}
 					// onAnimationComplete={handleInitialAnimationComplete}
 				>
-					Beacon Events
+					BEACON <span style={{color:"white"}}> EVENTS</span>
 				</motion.div>
 				<div id="body">
 					<div id="left-container">
