@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { listofpicss } from "./weddingtext.js";
 import "./Wedding.scss";
 
 export default function Birthday() {
@@ -133,7 +134,9 @@ export default function Birthday() {
 								height: pics[index]["height"],
 								width: pics[index]["width"],
 							}}
-						></div>
+						>
+							<img src={listofpicss[index]} alt="weddingpic"/>
+						</div>
 					);
 				})}
 			</div>

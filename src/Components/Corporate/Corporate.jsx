@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import "./Corporate.scss";
-
+import { listofpicss } from "./corporatetext";
 export default function Birthday() {
 	const [mark, setMark] = useState(0);
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -133,7 +133,9 @@ export default function Birthday() {
 								height: pics[index]["height"],
 								width: pics[index]["width"],
 							}}
-						></div>
+						>
+							<img src={listofpicss[index]} alt="corporate" />
+						</div>
 					);
 				})}
 			</div>
