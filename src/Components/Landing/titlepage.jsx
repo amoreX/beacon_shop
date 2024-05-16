@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./title.scss";
 import { allinfo, pictures } from "./text.js";
 export default function Title() {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-	const names = ["Birthday Parties", "Wedding Planning", "Corporate Evenets"];
+	const names = ["Birthday Parties", "Wedding Planning", "Corporate Events"];
 	const pics = ["1", "2", "3"];
 	let style = {
 		// top: ["5%", "15%", "35%"],
@@ -16,27 +16,27 @@ export default function Title() {
 	// 	setInitialAnimationCompleted(true);
 	// };
 	useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth);
+		};
 
-        window.addEventListener("resize", handleResize);
+		window.addEventListener("resize", handleResize);
 
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 	if (windowWidth < 1100) {
-        style = {
-            top: ["4%", "16%", "32%"],
-            left: ["16%", "40%", "8%"],
-        };
-    } else {
-        style = {
-            top: ["5%", "15%", "35%"],
-            left: ["20%", "50%", "15%"],
-        };
-    }
+		style = {
+			top: ["4%", "16%", "32%"],
+			left: ["16%", "40%", "8%"],
+		};
+	} else {
+		style = {
+			top: ["5%", "15%", "35%"],
+			left: ["20%", "50%", "15%"],
+		};
+	}
 
 	return (
 		<>
@@ -54,7 +54,7 @@ export default function Title() {
 					<div id="left-container">
 						<motion.div
 							id="title"
-							initial={ { y: 30, opacity: 0 }}
+							initial={{ y: 30, opacity: 0 }}
 							transition={{ type: "tween", ease: "easeInOut", delay: 0.5 }}
 							animate={{ y: 0, opacity: 1 }}
 						>
@@ -71,15 +71,7 @@ export default function Title() {
 							you with a glimpse into the world of possibilities we offer.
 						</motion.div>
 						<div id="sub-content">
-							<motion.div
-								initial={ { y: 30, opacity: 0 }}
-								transition={{ type: "tween", ease: "easeInOut", delay: 0.8 }}
-								animate={{ y: 0, opacity: 1 }}
-							>
-								Our services, designed to cater to every occasion:
-							</motion.div>
-							<div id="list">
-								{allinfo.map((content, index) => {
+							{/* {allinfo.map((content, index) => {
 									return (
 										<div key={index}>
 											<motion.div
@@ -98,8 +90,19 @@ export default function Title() {
 											</motion.div>
 										</div>
 									);
-								})}
-							</div>
+								})} */}
+							{names.map((party, index) => {
+								return (
+									<motion.div
+										id="names"
+										initial={{ y: 48, opacity: 0 }}
+										transition={{ type: "tween", delay: 0.9 + index * 0.5 }}
+										animate={{ y: 0, opacity: 1 }}
+									>
+										{party}
+									</motion.div>
+								);
+							})}
 						</div>
 					</div>
 					<div id="right-container">
